@@ -1,3 +1,3 @@
-﻿  Menu.cpp
-c:\users\acer\desktop\baocao\qlxemay\qlxemay\menu.cpp(65): warning C4101: 'x': unreferenced local variable
+﻿  HoaDon.cpp
+  LINK : C:\Users\ACER\Desktop\baocao\QLXeMay\x64\Debug\QLXeMay.exe not found or not built by the last incremental link; performing full link
   QLXeMay.vcxproj -> C:\Users\ACER\Desktop\baocao\QLXeMay\x64\Debug\QLXeMay.exe
