@@ -39,3 +39,5 @@ void LNR(Tree T);
 Tree searchHD(Tree T, char MaKH[]);
 Tree suaHD(Tree P);
 int delHD(Tree& T, char MaKH[]);
+void  ghifile(const char* filename, Tree& T);
+void docfile(const char* filename, Tree& T);

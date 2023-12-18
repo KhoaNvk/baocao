@@ -93,7 +93,7 @@ void createTree(Tree& T)
 			break;
 		int check = insertNode(T, x);
 		if (check == -1)
-			cout << "---Ma Hoa Don Da Co---\n" << endl;
+			cout << "---Ma Sinh Vien Da Co---\n" << endl;
 		else if (check == 0)
 			cout << "---Bo Nho Day---\n" << endl;
 		else cout << "---Them Thanh Cong---\n\n";
@@ -159,7 +159,7 @@ int delHD(Tree& T, char MaHD[]) {
 			T = T->Left;
 		else
 		{
-			Node* S = T, * Q = S->Left;
+			Node* S = T, *Q = S->Left;
 			while (Q->Right != NULL) {
 				S = Q;
 				Q = Q->Right;
@@ -172,6 +172,53 @@ int delHD(Tree& T, char MaHD[]) {
 	return 1;
 }
 
+void docfile(const char* filename, Tree& T) {
+	HOADON x;
+	FILE* f = fopen(filename, "rb");
+	if (f != NULL)
+	{
+		while (!feof(f))
+		{
 
+			fscanf(f, "%s\n", &x.MaHoaDon);
+			fscanf(f, "%s\n", &x.HoTen);
+			fscanf(f, "%s\n", &x.DiaChi);
+			fscanf(f, "%s\n", &x.SDT);
+			fscanf(f, "%s\n", &x.MaXe);
+			fscanf(f, "%s\n", &x.TenXe);
+			fscanf(f, "%d\n", &x.SoLuong);
+			fscanf(f, "%d\n", &x.DonGia);
+			double tt = tinhTien(x);
+			fscanf(f, "%lf\n\n", &tt);
+			insertNode(T, x);
+		}
+		fclose(f);
+	}
+	else
+	{
+		cout << "!!--Thong Bao: Danh Sach Hoa Don Dang Rong, Xin Vui Long Nhap Hoa Don--!!" << "\n\n";
+		createTree(T);
+	}
+}
 
+void  ghifile(const char* filename, Tree& T)
+{
+	if (T != NULL)
+	{
+		FILE* f = fopen(filename, "ab");
 
+		fprintf(f, "%s\n", T->key.MaHoaDon);
+		fprintf(f, "%s\n", T->key.HoTen);
+		fprintf(f, "%s\n", T->key.DiaChi);
+		fprintf(f, "%s\n", T->key.SDT);
+		fprintf(f, "%s\n", T->key.MaXe);
+		fprintf(f, "%s\n", T->key.TenXe);
+		fprintf(f, "%d\n", T->key.SoLuong);
+		fprintf(f, "%d\n", T->key.DonGia);
+		fprintf(f, "%lf\n\n", tinhTien(T->key));
+
+		ghifile(filename, T->Left);
+		ghifile(filename, T->Right);
+		fclose(f);
+	}
+}

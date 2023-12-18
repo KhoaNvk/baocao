@@ -1,4 +1,5 @@
-#include"HoaDon.h"
+#include "HoaDon.h"
+
 HANDLE hOut;
 
 void menuMain() {
@@ -48,8 +49,10 @@ void menuBill()
 	cout << "\t\t\t2. Them hoa don." << endl;
 	cout << "\t\t\t3. Tim kiem hoa don theo ma khach hang." << endl;
 	cout << "\t\t\t4. Xoa hoa don theo theo ma khach hang." << endl;
-	cout << "\t\t\t5. Quay ve Muc Thanh Toan." << endl;
-	cout << "\t\t\t6. Quay ve Menu Chinh." << endl << endl;
+	cout << "\t\t\t5. Doc du lieu." << endl;
+	cout << "\t\t\t6. Luu du lieu." << endl;
+	cout << "\t\t\t7. Quay ve Muc Thanh Toan." << endl;
+	cout << "\t\t\t8. Quay ve Menu Chinh." << endl << endl;
 	SetConsoleTextAttribute(hOut, 4);
 	cout << "\t\t\t============================================\n";
 	cout << "\n\n";
@@ -235,13 +238,33 @@ MenuBill: {
 			goto MenuBill;
 
 		}
-		
 		else if (flag2 == 5)
+		{
+		SetConsoleTextAttribute(hOut, 2);
+		system("cls");
+		cin.ignore();
+		docfile(f, T);
+		cout << "----Du Lieu Da Duoc Doc Len-----" << endl;
+		system("pause");
+		system("cls");
+		goto MenuBill;
+		}
+		else if (flag2 == 6)
+		{
+		SetConsoleTextAttribute(hOut, 2);
+		system("cls");
+		ghifile(f, T);
+		cout << "----Da Luu Du Lieu-----" << endl;
+		system("pause");
+		system("cls");
+		goto MenuBill;
+		}
+		else if (flag2 == 7)
 		{
 			system("cls");
 			goto MenuPay;
 		}
-		else if (flag2 == 6)
+		else if (flag2 == 8)
 		{
 			system("cls");
 			goto MenuMain;
