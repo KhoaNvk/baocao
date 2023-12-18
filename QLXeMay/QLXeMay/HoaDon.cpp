@@ -19,18 +19,37 @@ HOADON nhapHoaDon()
 	{
 		return x;
 	}
-	cout << "* Nhap Ten Khach Hang: ";
-	gets_s(x.HoTen);
-	cout << "* Nhap Dia Chi: ";
-	gets_s(x.DiaChi);
-	cout << "* Nhap So Dien Thoai: ";
-	gets_s(x.SDT);
-	cout << "* Nhap Ma Xe: ";
-	gets_s(x.MaXe);
-	cout << "* Nhap Ten Xe: ";
-	gets_s(x.TenXe);
-	cout << "* Nhap So Luong: "; cin >> x.SoLuong;
-	cout << "* Nhap Don Gia: "; cin >> x.DonGia;
+	do {
+		cout << "* Nhap Ten Khach Hang: ";
+		gets_s(x.HoTen);
+	} while (strlen(x.HoTen) == 0);
+
+	do {
+		cout << "* Nhap Dia Chi: ";
+		gets_s(x.DiaChi);
+	} while (strlen(x.DiaChi) == 0);
+
+	do {
+		cout << "* Nhap So Dien Thoai: ";
+		gets_s(x.SDT);
+	} while (strlen(x.SDT) == 0);
+
+	do {
+		cout << "* Nhap Ma Xe: ";
+		gets_s(x.MaXe);
+	} while (strlen(x.MaXe) == 0);
+
+	do {
+		cout << "* Nhap Ten Xe: ";
+		gets_s(x.TenXe);
+	} while (strlen(x.TenXe) == 0);
+
+	cout << "* Nhap So Luong: ";
+	cin >> x.SoLuong;
+
+	cout << "* Nhap Don Gia: ";
+	cin >> x.DonGia;
+
 	while (getchar() != '\n');
 
 	return x;
