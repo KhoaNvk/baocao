@@ -13,12 +13,14 @@ double tinhTien(HOADON x)
 HOADON nhapHoaDon()
 {
 	HOADON x;
+	do {
 	cout << "* Nhap So Hoa Don (Q De Quay Lai): ";
 	gets_s(x.MaHoaDon);
 	if (strcmp(x.MaHoaDon, "q") == 0 || strcmp(x.MaHoaDon, "Q") == 0)
 	{
 		return x;
 	}
+	} while (strlen(x.MaHoaDon) == 0);
 	do {
 		cout << "* Nhap Ten Khach Hang: ";
 		gets_s(x.HoTen);
